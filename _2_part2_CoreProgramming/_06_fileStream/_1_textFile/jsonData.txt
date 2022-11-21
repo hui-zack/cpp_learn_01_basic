@@ -1,0 +1,18 @@
+{
+    "code": 20041,
+    "msg": null,
+    "value": {
+        "byLevel": {
+            "error": 0,
+            "info": 0,
+            "wrong": 0
+        },
+        "byDays": [
+            {
+                "times": "2022-09-21",
+                "count": 0
+            }
+        ]
+    },
+    "status": true
+}

@@ -1,0 +1,4 @@
+电脑名称: 联想拯救者R9000P
+    CPU: R7-5800H
+    GPU: GTX-3060
+    Memory: Samsung

@@ -1,0 +1,91 @@
+类与对象-封装知识点:
+
+c++创建类:
+    使用流程:
+    --> [创建学生类]
+        class Student{
+
+        public:
+            string name;                    /* 类属性 / 成员属性 / 成员变量 */
+            int id;
+
+            void setName(string name){      /* 成员行为 / 成员方法 */
+                this->name = name;
+            }
+
+            void setId(int id){
+                this->id = id;
+            }
+
+            void showStudent() {
+                cout << "name: " << name << "; id: " << id << endl;
+            }
+
+        };
+
+        int main(){
+            /* --> [实例化学生类-stu1] */
+            Student stu1{};
+            stu1.name = "张三";
+            stu1.id = 16001;
+            stu1.showStudent();
+
+            /* --> [实例化学生类-stu2] */
+            Student stu2{};
+            stu2.setName("李四");
+            stu2.setId(16002);
+            stu2.showStudent();
+        }
+
+    内容:
+        * 创建类:
+            class Student{
+
+            public:
+                string name;                    /* 类属性 / 成员属性 / 成员变量 */
+                string id;
+
+                void setName(string name){...}      /* 成员行为 / 成员方法 */
+                void setId(int id){...};
+
+            };
+
+        * 实例化:
+            Student stu1{};
+            stu1.name = "张三";
+            stu1.id = 16001;
+            stu1.showStudent();
+
+class权限管理:
+    使用流程:
+        --> [class-权限管理]
+        class Person{
+        public:                     /* 公共权限内容 */
+            string name;            /* 保护权限内容 */
+        protected:
+            string car;
+
+        private:                    /* 私有权限内容 */
+            void func(){
+                this->name = "张三";
+                this->car = "比亚迪";
+            }
+        };
+
+    情况说明:
+         * 成员属性设置私有:
+            可以自己控制读写权限
+            对于写权限, 我们可以检测数据的有效性
+
+    内容:
+        * 访问权限
+            public:     公共权限; 类内可以访问, 类外可以访问
+            protected:  保护权限; 类内可以访问, 类外不可访问, 子类可以访问父类中的保护内容
+            private:    私有权限; 类内可以访问, 类外不可访问, 子类不可访问父类中的保护内容
+
+分文件:
+    分文件流程:
+        https://www.bilibili.com/video/BV1et411b73Z?p=105       //从20:00开始
+
+
+
