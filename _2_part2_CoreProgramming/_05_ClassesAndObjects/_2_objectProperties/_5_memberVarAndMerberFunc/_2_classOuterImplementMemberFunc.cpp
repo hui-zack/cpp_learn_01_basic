@@ -32,6 +32,7 @@ Camera::~Camera() {             /* 5-2-3-2 Camera外部实现析构函数 */
     cout << "[Camera] destructor used" << endl;
 }
 
+
 int main() {
     Camera camera = Camera();
     cout << "[main] get camera.name = " << camera.getName() << endl;
