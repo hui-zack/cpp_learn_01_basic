@@ -58,6 +58,55 @@ public:
             _arrAddr = nullptr;
         }
     }
+
+    /* 尾插法 */
+    void add(const T& t){
+        // 判断容量是否超标
+        if (_capacity == this->_size){
+            return;
+        }
+        this->_arrAddr[this->_size] = t;
+        _size ++;
+    }
+
+    /* 尾删法 */
+    void deleteOne(){
+        if (this->_size == 0){
+            return;
+        }
+
+
+        this->_size --;
+
+    }
+
+    /* 通过下标来访问数据 */
+    T operator[](int index){
+        return this->_arrAddr[index];
+    }
+
+    /* 获取数组容量 */
+    int getCapacity(){
+        return _capacity;
+    }
+    /* 获取数组大小 */
+
+    int getSize(){
+        return _size;
+    }
+};
+
+
+
+class Camera{
+public:
+    string _name;
+    int _id;
+    Camera() = default;
+    Camera(string name, int id): _name(name), _id(id){};
+    void printInfo(){
+        cout << "[Camera] _name = " << _name << ", _id = " << _id << endl;
+    }
 };
 
 void test(){
@@ -70,11 +119,49 @@ void test(){
     array1 = array2 = array3;
     cout << array1._capacity << endl;
 
+
+
+}
+/** 测试int类型 */
+void testInt(){
+    MyArray<string> array = MyArray<string>(10);
+    for (int i = 0; i< 10; i++){
+        string value = "value";
+        value.append(to_string(i));
+        array.add(value);
+    }
+    cout << array[9] << endl;
+    cout << array._capacity << endl;
+    cout << array._size << endl;
+
+    array.deleteOne();
+
+    cout << array._capacity << endl;
+    cout << array._size << endl;
+
 }
 int main() {
+    Camera camera1("大华枪机", 1);
+    Camera camera2("海康枪机", 2);
+    Camera camera3("大华全彩", 3);
+    Camera camera4("海康全彩", 4);
 
-    test();
+    MyArray<Camera> cameraArray = MyArray<Camera>(10);
+    cameraArray.add(camera1);
+    cameraArray.add(camera2);
+    cameraArray.add(camera3);
+    cameraArray.add(camera4);
 
+    for (int i = 0; i < cameraArray._size; ++i) {
+        cameraArray[i].printInfo();
 
-    return 0;
+    }
+    cout << endl;
+
+    cameraArray.deleteOne();
+
+    for (int i = 0; i < cameraArray._size; ++i) {
+        cameraArray[i].printInfo();
+    }
+
 }
