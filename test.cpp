@@ -20,4 +20,8 @@ public:
 int main() {
     Camera camera = Camera();
     cout << typeid(camera).name() << endl;
+
+    char* s = "12\0a3";
+
+    cout << s << endl;
 }
