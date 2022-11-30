@@ -1,3 +1,13 @@
+[toc]
+    [了解string](#了解string)
+    [字符串string的构造函数](#字符串string的构造函数)
+    [字符串string的赋值操作](#字符串string的赋值操作)
+    [字符串string的拼接操作](#字符串string的拼接操作)
+    [字符串string的查找](#字符串string的查找)
+    [字符串string的替换](#字符串string的替换)
+    [字符串比较](#字符串比较)
+    [](#)
+
 ## 了解string
     
     string是一个类, 内部封装了char[]*, 通过类管理着这个字符数组
@@ -66,15 +76,16 @@
     string& append(const string& s, int pos, int n)     拼接string字符串pos下标开始的n个字符
 
 ## 字符串string的查找
-[4-1-1 在pos下标开始及之后的区域, 查找char*字符串第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-1-2 在pos下标开始及之后的区域, 查找string字符串str第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-1-3 在pos下标开始之后n个字符的区域, 查找char*字符串第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-1-4 在pos下标开始及之后的区域, 查找字符c第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-
-[4-2-1 从pos下标开始及之前的区域, 查找char*字符串最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-2-2 从pos下标开始及之前的区域, 查找string字符串str最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-2-3 从pos下标开始之前n个字符的区域, 查找char*字符串s最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
-[4-2-4 查找字符最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+[从前往后查找]
+    [4-1-1 在pos下标开始及之后的区域, 查找char*字符串第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-1-2 在pos下标开始及之后的区域, 查找string字符串str第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-1-3 在pos下标开始之后n个字符的区域, 查找char*字符串第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-1-4 在pos下标开始及之后的区域, 查找字符c第一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+[从后往前查找]
+    [4-2-1 从pos下标开始及之前的区域, 查找char*字符串最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-2-2 从pos下标开始及之前的区域, 查找string字符串str最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-2-3 从pos下标开始之前n个字符的区域, 查找char*字符串s最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
+    [4-2-4 查找字符最后一次出现的下标](./_04_stringFind/_1_stringFind.cpp)
 
     int find(const char* s, int post = 0) const         在pos下标开始及之后的区域, 查找char*字符串第一次出现的下标
     int find(const string& str, int pos = 0) const      在pos下标开始及之后的区域, 查找string字符串str第一次出现的下标
@@ -87,6 +98,49 @@
     int rfind(const char c, int pos = 0) const          查找字符最后一次出现的下标
 
 ## 字符串string的替换
+.   [5-1-1 从pos开始及n个字符的区域, 替换为char*字符串s](./_05_stringReplace/_1_stringReplace.cpp)
+.   [5-1-2 从pos开始及n个字符的区域, 替换为string字符串str](./_05_stringReplace/_1_stringReplace.cpp)
 
-    string& replace(int pos, int n, const char* s); 从pos开始及n个字符的区域, 替换为char*字符串s
+
+    string& replace(int pos, int n, const char* s);     从pos开始及n个字符的区域, 替换为char*字符串s
     string& replace(int pos, int n, const string& str); 从pos开始及n个字符的区域, 替换为string字符串str
+
+
+## 字符串比较
+.   [6-1 与string字符串比较](./_06_stringCompare/_1_stringCompare.cpp)
+.   [6-2 与char*字符串比较](./_06_stringCompare/_1_stringCompare.cpp)
+
+    int compare(const string& s) const                  与string字符串比较
+    int compare(const char* s) const                    与char*字符串比较
+    以ASCII码的方式进行比较:    
+        两个字符串相等, 返回0
+        >, 返回1
+        <, 返回2
+
+## 字符串取字符
+.   [7-1 使用运算符[]取下标index处的字符](./_07_stringAt/_07_stringAt.cpp)
+.   [7-2 使用成员方法at(int index)取下标index处的字符](./_07_stringAt/_07_stringAt.cpp)
+
+    char& operator[](int index);            使用运算符[]取下标index处的字符
+    char& at(int index);                    使用成员方法at(int index)取下标index处的字符
+
+## 字符串插入和删除
+[字符串插入]
+    [8-1-1 在pos下标前插入char*字符串s](./_08_stringInsert/_1_stringInsert.cpp)
+    [8-1-2 在pos下标前插入string字符串str](./_08_stringInsert/_1_stringInsert.cpp)
+    [8-1-3 在pos下标前插入n个字符c](./_08_stringInsert/_1_stringInsert.cpp)
+[字符串删除]
+    [8-2 删除pos下标开始及之后n个字符](./_08_stringInsert/_1_stringInsert.cpp)
+
+    字符串插入:
+        string& insert(int pos, const char* s);         在pos下标后插入char*字符串s
+        string& insert(int pos, const string& str);     在pos下标后插入string字符串str
+        string& insert(int pos, int n, char c);         在pos下标后插入字符c
+    字符串删除:
+        string& erase(int pos, int n = npos);           删除pos下标开始之后n个字符
+
+## 字符串截取
+[9-1 返回pos下标开始及之后的n个字符组成的字符串](./_09_stringSubstr/_1_stringSubstr.cpp)
+
+    string substr(int pos = 0, int n = npos) const      返回pos下标开始及之后的n个字符组成的字符串
+
