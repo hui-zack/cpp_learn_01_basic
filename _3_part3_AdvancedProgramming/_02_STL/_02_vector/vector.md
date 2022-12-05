@@ -1,32 +1,12 @@
-## vector
-[创建vector]
-    [1-1-1 声明vector头文件](./_01_useVector/_1_useVertor.cpp)
-
-    [1-1-2 创建vector容器](./_01_useVector/_1_useVertor.cpp)
-    
-
-
-[vector的尾插法和尾删法]
-    [1-2-1 vector尾插法](./_01_useVector/_1_useVertor.cpp)
-    [1-2-2 vector尾删法](./_01_useVector/_1_useVertor.cpp)
-
-[vector的begin()和end()方法]
-    [1-3-1 vec.begin()返回第一个元素的指针](./_01_useVector/_1_useVertor.cpp)
-    [1-3-2 vec.end()返回最后一个元素下一个位置的指针](./_01_useVector/_1_useVertor.cpp)
-
-[vector的四种遍历方式]
-    [1-5-1 增强for循环遍历 - 推荐](./_01_useVector/_1_useVertor.cpp)
-    [1-5-2 普通for循环遍历](./_01_useVector/_1_useVertor.cpp)
-    [1-5-3 while遍历](./_01_useVector/_1_useVertor.cpp)
-    [1-5-4 for_each遍历, 需要声明算法头文件, 自定义元素操作函数](./_01_useVector/_1_useVertor.cpp)
-
-[vector存放自定义数据类型]
-.   [2-1 vector存放自定义数据类型对象](./_01_useVector/_2_vectorSaveCamera.cpp)
-.   [2-2 vector存放自定义数据类型指针](./_01_useVector/_2_vectorSaveCamera.cpp)
-
-    容器: vector
-    算法: for_each
-    迭代器: vector<int>::iterator
+[toc]
+    [Vector的构造方法](#Vector的构造方法)
+    [Vector整体赋值操作](#Vector整体赋值操作)
+    [Vector的容量和长度相关方法](#Vector的容量和长度相关方法)
+    [Vector元素的插入和删除](#Vector元素的插入和删除)
+    [Vector元素的插入和删除](#Vector元素的插入和删除)
+    [Vector元素的获取](#Vector元素的获取)
+    [Vector交换所有元素](#Vector交换所有元素)
+    [遍历vector](#遍历vector)
 
 ## Vector的构造方法
 .   [1-1 使用无参构造创建vector](./_01_vectorConstructor/_1_vectorConstructor.cpp)
@@ -54,7 +34,7 @@
     assign(beg, end);                           将[beg, end)区间中的数据拷贝赋值给本身
     assign(n, elem);                            将n个elem拷贝赋值给本身
 
-## Vector的容量大小相关方法
+## Vector的容量和长度相关方法
 [尺寸容量的获取判断方法]
 .   [3-1-1 使用isEmpty()方法判断vector是否为空](./_03_capacitySizeMethodOfVector/_1_capacitySizeMethodOfVec.cpp)
 .   [3-1-2 使用capacity()方法获取容器容量(申请的地址大小)](./_03_capacitySizeMethodOfVector/_1_capacitySizeMethodOfVec.cpp)
@@ -69,7 +49,7 @@
 .   [3-3-2-1 使用shrink_to_fit()的方式缩减容器容量](./_03_capacitySizeMethodOfVector/_1_capacitySizeMethodOfVec.cpp)
 .   [3-3-2-2 使用匿名对象+swap(vector<T> vec)的方式缩减容器容量](./_03_capacitySizeMethodOfVector/_1_capacitySizeMethodOfVec.cpp)
 
-    尺寸容量的获取判断方法:
+    长度和容量的获取判断方法:
         boolean empty();                判断容器是否非空
         int capacity();                 获取容器的容量
         int size();                     获取容器中元素的个数
@@ -118,6 +98,16 @@
     .back();                         返回最后一个元素
 
 ## Vector交换所有元素
-    
+.   [6 6-1 使用swap()交换元素](./_06_vectorSwapAllEles/_1_vectorSwapAllEles.cpp)
+
     swap(vector<T> vec)             使用swap(vec)交换元素和容量(本质上是交换了指针) 
 
+## 遍历vector
+.   [1-7-1 增强for循环遍历](./_07_foreachVector/_1_foreachVertor.cpp)
+.   [1-7-2 普通for循环遍历](./_07_foreachVector/_1_foreachVertor.cpp)
+.   [1-7-3 while循环遍历](./_07_foreachVector/_1_foreachVertor.cpp)
+.   [for_each遍历, 需要声明算法头文件, 自定义元素操作函数](./_07_foreachVector/_1_foreachVertor.cpp)
+    
+    容器: vector
+    算法: for_each
+    迭代器: vector<int>::iterator

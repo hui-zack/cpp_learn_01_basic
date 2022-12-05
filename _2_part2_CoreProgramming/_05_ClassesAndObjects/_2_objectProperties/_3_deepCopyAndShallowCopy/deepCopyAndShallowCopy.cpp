@@ -1,5 +1,5 @@
 // Create by hui on 2022/5/27 11:30
-// Code describe: Éî¿½±´¶ÔÏóºÍÇ³¿½±´¶ÔÏó
+// Code describe: æ·±æ‹·è´å¯¹è±¡å’Œæµ…æ‹·è´å¯¹è±¡
 // Keyword      : 
 
 #include <iostream>
@@ -10,7 +10,7 @@ class Person{
 
 private:
     int port = 10086;
-    /** Ö¸ÕëĞÍ³ÉÔ±ÊôĞÔ */
+    /** æŒ‡é’ˆå‹æˆå‘˜å±æ€§ */
     int* height;
 public:
 
@@ -21,22 +21,22 @@ public:
     Person(int age, int* height) {
         cout << "[Person] HaveParam Constructor init, addr = " << (long long) this << endl;
         this->port = age;
-        /** ÓĞ²Î¹¹Ôìº¯ÊıÖĞÔÚ¶ÑÇø¿ª±ÙĞÂÄÚ´æ, ´æ´¢Ö¸ÕëµÄĞ¯´øÖµ */
+        /** æœ‰å‚æ„é€ å‡½æ•°ä¸­åœ¨å †åŒºå¼€è¾Ÿæ–°å†…å­˜, å­˜å‚¨æŒ‡é’ˆçš„æºå¸¦å€¼ */
         this->height = new int(*height);
     }
 
     Person(const Person &p) {
         this->port = p.port;
-        /* 3-1-1 Ç³¿½±´: ±àÒëÆ÷Ä¬ÈÏµÄ¹¹Ôìº¯ÊıÓÃÀ´¸´ÖÆÖ¸Õë, »áµ¼ÖÂĞÂ¶ÔÏóµÄ¸ÃÖ¸ÕëÊôĞÔÓëÔ­¶ÔÏóÖ¸ÏòÏàÍ¬ */
+        /* 3-1-1 æµ…æ‹·è´: ç¼–è¯‘å™¨é»˜è®¤çš„æ„é€ å‡½æ•°ç”¨æ¥å¤åˆ¶æŒ‡é’ˆ, ä¼šå¯¼è‡´æ–°å¯¹è±¡çš„è¯¥æŒ‡é’ˆå±æ€§ä¸åŸå¯¹è±¡æŒ‡å‘ç›¸åŒ */
         // this->height = p.height;
-        /* 3-2-1 Éî¿½±´: Ê¹ÓÃnew¶ÑÇø¿ª±ÙĞÂÄÚ´æ´¢´æÊı¾İ²¢·µ»ØĞÂÄÚ´æµØÖ· */
+        /* 3-2-1 æ·±æ‹·è´: ä½¿ç”¨newå †åŒºå¼€è¾Ÿæ–°å†…å­˜å‚¨å­˜æ•°æ®å¹¶è¿”å›æ–°å†…å­˜åœ°å€ */
         this->height = new int(*p.height);
         cout << "[Person] Copy Constructor init, addr = " << (long long) this << endl;
     }
 
     ~Person() {
         cout << "[Person] destructor object, addr = " << (long long) this << endl;
-        /* 3-2-2 Îö¹¹º¯ÊıÊÖ¶¯ÊÍ·Å±¾µØ¶ÔÏóµÄ¶ÑÇøÊôĞÔ */
+        /* 3-2-2 ææ„å‡½æ•°æ‰‹åŠ¨é‡Šæ”¾æœ¬åœ°å¯¹è±¡çš„å †åŒºå±æ€§ */
         delete this->height;
 
     }

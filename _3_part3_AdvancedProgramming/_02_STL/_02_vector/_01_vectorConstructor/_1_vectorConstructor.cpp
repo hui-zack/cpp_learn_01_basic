@@ -9,11 +9,15 @@
 using namespace std;
 
 template <class T>
-void printVector(const vector<T> & vector){
-    for(T t: vector){
-        cout << t << " ";
+void printVector(const vector<T> & vec){
+//    for(T t: vector){
+//        cout << t << " ";
+//    }
+    for(auto it = vec.begin(); it != vec.end(); it ++){
+        cout << *it << " ";
     }
     cout << endl;
+
 }
 
 

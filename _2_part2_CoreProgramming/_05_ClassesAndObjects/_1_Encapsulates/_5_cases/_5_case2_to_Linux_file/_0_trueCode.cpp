@@ -2,23 +2,23 @@
 // Code describe:
 // Keyword      :
 /*
- * �㵽Բ�ĵľ���:
- *  �㵽Բ�ĵľ��� == �뾶       ����԰��
- *  �㵽Բ�ĵľ��� > �뾶        ����԰��
- *  �㵽Բ�εľ��� < �뾶        ����Ա��
- *  �㵽Բ�ĵľ���: (x1-x2)^2 + (y1 - y2)^2  r^2�Ա�
+ * 点到圆心的距离:
+ *  点到圆心的距离 == 半径       点在园上
+ *  点到圆心的距离 > 半径        点在园外
+ *  点到圆形的距离 < 半径        点在员外
+ *  点到圆心的距离: (x1-x2)^2 + (y1 - y2)^2  r^2对比
  * */
 #include <iostream>
 
 using namespace std;
 
 
-class Point{                /* ���� */
+class Point{                /* 点类 */
 private:
     int X;
     int Y;
 public:
-    /* X ��ȡ������ */
+    /* X 获取和设置 */
     void setX(int x){
         X = x;
     }
@@ -26,7 +26,7 @@ public:
     int getX(){
         return X;
     }
-    /* Y ��ȡ������ */
+    /* Y 获取和设置 */
     void setY(int y){
         Y = y;
     }
@@ -37,12 +37,12 @@ public:
 };
 
 
-class circle{               /* Բ�� */
+class circle{               /* 圆类 */
 private:
     int R;
     Point Center;
 public:
-    /* R ���úͻ�ȡ */
+    /* R 设置和获取 */
     void setR(int r){
         R = r;
     }
@@ -51,7 +51,7 @@ public:
         return R;
     }
 
-    /* Բ�Ļ�ȡ */
+    /* 圆心获取 */
     Point getCenter(){
         return Center;
     }
@@ -59,32 +59,32 @@ public:
 };
 
 void isInCircle(circle &c, Point&p){
-    // ��������֮�����ƽ��
+    // 计算两点之间距离平方
     int distance = (c.getCenter().getX() - p.getX()) * (c.getCenter().getX() - p.getX()) +
                    (c.getCenter().getY() - p.getY()) * (c.getCenter().getY() - p.getY());
 
-    // ����뾶��ƽ��
+    // 计算半径的平方
     int rDistance = c.getR() * c.getR();
 
     if (distance > rDistance){
-        cout << "��Բ��" << endl;
+        cout << "在圆外" << endl;
     } else if (distance == rDistance){
-        cout << "��Բ��" << endl;
+        cout << "在圆上" << endl;
     } else {
-        cout << "��Բ��" << endl;
+        cout << "在圆内" << endl;
     }
 }
 
 
 
 int main() {
-    /* Բ�Ķ��� */
+    /* 圆的对象 */
     circle c1{};
     c1.setR(10);
     c1.getCenter().setX(0);
     c1.getCenter().setY(0);
 
-    /* ��Ķ��� */
+    /* 点的对象 */
     Point p1{};
     p1.setX(5);
     p1.setY(6);

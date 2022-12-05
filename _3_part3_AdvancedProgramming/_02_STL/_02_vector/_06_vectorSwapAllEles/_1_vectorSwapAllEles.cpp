@@ -41,23 +41,11 @@ int main() {
     cout << "交换前: " << endl;
     printVector(vec1);
     printVector(vec2);
-    /* 1-1 使用swap()交换元素 */
+    /* 6-1 使用swap()交换元素 */
     vec1.swap(vec2);
     cout << "交换后: " << endl;
     printVector(vec1);
     printVector(vec2);
-//-----------------------------------------------------------
-
-    /* 1-2 通过匿名对象+swap()来清除vec的无效容量 */
-
-    vector<int> vec;
-    vec.reserve(10000);
-    for (int i = 0; i < 10000; i++){
-        vec.push_back(i);
-    }
-    vec.resize(3);
-    cout << "vec size = " << vec.size() << endl;
-    cout << "vec capacity = " << vec.capacity() << endl;
 
 
     return 0;
