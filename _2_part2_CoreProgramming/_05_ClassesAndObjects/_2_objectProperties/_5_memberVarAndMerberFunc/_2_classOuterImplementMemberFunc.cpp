@@ -24,6 +24,7 @@ Camera::Camera() {              /* 5-2-1-2 Camera外部实现构造函数 */
     cout << "[Camera] constructor init" << endl;
 }
 
+
 string Camera::getName() {      /* 5-2-2-2 Camera外部实现成员函数 */
     return this->name;
 }

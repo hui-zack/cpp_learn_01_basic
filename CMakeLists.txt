@@ -15,18 +15,18 @@ set(CMAKE_CXX_STANDARD 14)
 #endforeach ()
 
 
-file (GLOB_RECURSE files *.c)
-foreach (file ${files})
-    string(REGEX REPLACE ".+/(.+)/(.+)/(.+)/(.+)\\..*" "\\1-\\2-\\3-\\4" exe ${file})
-    string(REPLACE ".cpp" ".h" file1 ${file})
-
-    if (EXISTS ${file1})
-        add_executable (${exe} ${file} ${file1})
-    else()
-        add_executable (${exe} ${file})
-    endif()
-    #    message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe} )
-endforeach ()
+#file (GLOB_RECURSE files *.c)
+#foreach (file ${files})
+#    string(REGEX REPLACE ".+/(.+)/(.+)/(.+)/(.+)\\..*" "\\1-\\2-\\3-\\4" exe ${file})
+#    string(REPLACE ".cpp" ".h" file1 ${file})
+#
+#    if (EXISTS ${file1})
+#        add_executable (${exe} ${file} ${file1})
+#    else()
+#        add_executable (${exe} ${file})
+#    endif()
+#    #    message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe} )
+#endforeach ()
 
 
 file (GLOB_RECURSE files *.cpp)
