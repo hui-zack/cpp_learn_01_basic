@@ -42,8 +42,6 @@ foreach (file ${files})
 #    message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe} )
 endforeach ()
 
-
-
 # 修改控制台输出为GBK格式(window控制台默认GBK, 用utf8会看不懂....)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fexec-charset=GBK")
 

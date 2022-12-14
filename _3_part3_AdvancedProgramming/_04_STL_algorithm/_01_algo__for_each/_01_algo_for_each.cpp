@@ -15,7 +15,7 @@ using namespace std;
         // -- 遍历容器算法 --
         // beg: 开始迭代器
         // end: 结束迭代器
-        // funcObject: 函数对象(仿函数, 一元谓词无返回值)
+        // funcObject: 函数对象(仿函数, 无返回值)
  */
 
 /* 普通函数 for_each算法的遍历规则函数 */

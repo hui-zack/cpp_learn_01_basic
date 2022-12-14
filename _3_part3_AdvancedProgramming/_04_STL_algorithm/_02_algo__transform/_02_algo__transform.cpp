@@ -18,7 +18,7 @@ using namespace std;
         // srcCon.beg - 源容器beg
         // srcCon.end - 源容器end
         // dstCon.beg - 目标容器beg
-        // funcObject - 函数对象(仿函数, 一元谓词返回元素修改值)
+        // funcObject - 函数对象(仿函数, 返回元素类型)
  */
 
 class TransformFunctor{
@@ -43,7 +43,7 @@ int main() {
     /** ---- */
 
     list<int> lst;
-    insertDataToIntList(lst);
+    insertIntDataToList(lst);
     list<int> dstList;
 
     /* 2-2 使用transform拷贝list元素到新list */

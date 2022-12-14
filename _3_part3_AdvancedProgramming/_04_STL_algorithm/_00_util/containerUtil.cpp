@@ -25,9 +25,9 @@ void printVector(const string& name, const vector<T> & vec){
     cout << endl;
 }
 
-void insertIntDataToVector(vector<int>& vec){
+void insertIntDataToVector(vector<int>& vec, int offset = 0){
     for (int i = 0; i < 10; i++){
-        vec.push_back((i + 1)* 10);
+        vec.push_back((i + 1)* 10 + offset);
     }
 }
 
@@ -50,7 +50,7 @@ void printList(const string& listName, list<T> & lst){
     cout << endl;
 }
 
-void insertDataToIntList(list<int> & lst){
+void insertIntDataToList(list<int> & lst){
     for (int i = 0; i < 10; i++){
         lst.push_back((i+1) * 10);
     }
